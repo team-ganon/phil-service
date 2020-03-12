@@ -1,4 +1,4 @@
-const { db, User, Review, Rental}  = require('./index.js');
+const { User, Review }  = require('./index.js');
 const faker = require('faker');
 
 const users = [];
@@ -7,10 +7,8 @@ for (let i = 1; i <= 100; i++) {
     name: faker.name.findName()
   })
 }
-const reviews = [];
-const rentals = [];
-let usedReviews = [];
 
+const reviews = [];
 
 const seedDb = function() {
   User.insertMany(users)
@@ -21,6 +19,7 @@ const seedDb = function() {
         for (let j = 0; j < random; j++) {
           reviews.push({
               user: users[i]._id, 
+              rental: i + 1,
               body: faker.fake('{{lorem.paragraph}}')
             }
           )
@@ -28,28 +27,8 @@ const seedDb = function() {
       }
       return Review.insertMany(reviews)
     })
-    .then((reviews) => {
-      for (let i = 1; i <= 100; i++) {
-        let rental = new Rental({_id: i});
-        let random = Math.floor(Math.random() * 100);
-        for (let j = 0; j < random; j++) {
-          rental.reviews.push(reviews[j]._id);
-        }
-        Rental.create(rental)
-        .then(() => {})
-        .catch(e => console.log(e, `rental create error`))
-      }
-     
-    });
+    .then(() => {})
+    .catch((e) => console.log(e))
 };
 
-const findAndRemoveUnusedReviews = () => {
-  Review.find({})
-    .then(res => console.log(res, '=========find========='))
-    .catch(e => console.log(e, '===========findcatch========='))
-}
-
-
-
 seedDb();
-findAndRemoveUnusedReviews();

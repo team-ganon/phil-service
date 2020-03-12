@@ -16,23 +16,13 @@ const reviewsSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users'
   },
+  rental: Number,
   body: String,
   date: { type: Date, default: Date.now }
 });
 
 const Review = mongoose.model('reviews', reviewsSchema);
 
-const rentalsSchema = new mongoose.Schema({
-  _id: Number,
-  reviews: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'reviews'
-  }]
-});
-
-const Rental = mongoose.model('rentals', rentalsSchema);
-
-module.exports.db = db;
+//module.exports.db = db;
 module.exports.User = User;
 module.exports.Review = Review;
-module.exports.Rental = Rental;
