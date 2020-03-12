@@ -23,10 +23,11 @@ const reviewsSchema = new mongoose.Schema({
 const Review = mongoose.model('reviews', reviewsSchema);
 
 const rentalsSchema = new mongoose.Schema({
-  user: [{
+  _id: Number,
+  reviews: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'reviews'
-  }],
+  }]
 });
 
 const Rental = mongoose.model('rentals', rentalsSchema);
