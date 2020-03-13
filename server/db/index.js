@@ -23,6 +23,5 @@ const reviewsSchema = new mongoose.Schema({
 
 const Review = mongoose.model('reviews', reviewsSchema);
 
-//module.exports.db = db;
 module.exports.User = User;
 module.exports.Review = Review;

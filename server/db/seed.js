@@ -4,7 +4,8 @@ const faker = require('faker');
 const users = [];
 for (let i = 1; i <= 100; i++) {
   users.push({
-    name: faker.name.findName()
+    name: faker.name.findName(),
+    imageUrl: `https://hackreactoramazonfrontendcapstone.s3-us-west-2.amazonaws.com/${i}.jpeg`
   })
 }
 
@@ -15,11 +16,16 @@ const seedDb = function() {
     .then(() => User.find())
     .then( users => {
       for (let i = 0; i < users.length; i++) {
+        reviews.push({
+          user: users[i]._id, 
+          rental: i + 1,
+          body: faker.fake('{{lorem.paragraph}}')
+        })
         let random = Math.floor(Math.random() * 100);
         for (let j = 0; j < random; j++) {
           reviews.push({
               user: users[i]._id, 
-              rental: i + 1,
+              rental: Math.floor(Math.random() * 100),
               body: faker.fake('{{lorem.paragraph}}')
             }
           )
