@@ -7,8 +7,6 @@ const userSchema = new mongoose.Schema({
   imageUrl: String,
 });
 
-//Havent figured out imageUrl plays into this with S3 yet
-
 const User = mongoose.model('users', userSchema);
 
 const reviewsSchema = new mongoose.Schema({
@@ -18,7 +16,13 @@ const reviewsSchema = new mongoose.Schema({
   },
   rental: Number,
   body: String,
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  cleanliness: Number,
+  communication: Number,
+  value: Number,
+  accuracy: Number,
+  checkIn: Number,
+  location: Number
 });
 
 const Review = mongoose.model('reviews', reviewsSchema);

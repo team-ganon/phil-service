@@ -7,6 +7,7 @@ app.use(express.static(__dirname + '/../public/dist'));
 app.get('/api/rentals/:id', async (req, res) => {
   try {
     let reviews = await Review.find({ rental: req.params.id});
+    console.log(reviews)
     let newArray = [];
     for (let i = 0; i < reviews.length; i++) {
       let user = await User.findById(reviews[i].user);
