@@ -1,7 +1,80 @@
-.reviewsHeaderH2 {
+p {
   font-family: 'Roboto', sans-serif;
+  color: rgb(72, 72, 72);
+}
+
+span {
+  color: rgb(72, 72, 72);
+}
+
+.app {
+  width: 35vw;
+  margin-left: 20vw;
+}
+
+.reviewsHeaderH2 {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.25em;
   color: rgb(72, 72, 72);
 }
+
+input {
+  font-size: 14px;
+  color:  #484848;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-weight: 600;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 2px;
+  border-width: 1px;
+  margin-right: 5px;
+  border-right: 0px;
+}
+
+.average {
+  font-size: 18px;
+}
+
+.bottomDivOfHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.containerForStarReviews {
+  display: flex;
+}
+
+.containerForStarReviews {
+  display: flex;
+  
+}
+
+.star {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  padding-right: 10px;
+  border-right: 1px solid rgb(235, 235, 235)
+}
+
+.hydrated {
+ padding-top: 2px;
+  padding-right: 3px;
+}
+
+ion-icon {
+  justify-self: center;
+}
+
+.average {
+  margin: 0px;
+  padding-left: 10px;;
+}
+
+.search {
+  display: flex;;
+}
+
