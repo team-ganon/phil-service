@@ -1,3 +1,7 @@
-.app {
-  color: red;
+.reviewsHeaderH2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25em;
+  color: rgb(72, 72, 72);
 }
