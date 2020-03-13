@@ -74,13 +74,13 @@ class App extends Component {
         average={this.state.average}
         total={this.state.total}
         />
-        <div>
+        <div className='ratingHolderDiv'>
           <Rating name={{name: "Cleanliness"}}score={this.state.cleanliness}/>
-          {/* <Rating name={{name: "Communication"}}score={this.state.cleanliness}/>
+          <Rating name={{name: "Communication"}}score={this.state.cleanliness}/>
           <Rating name={{name: "Value"}}score={this.state.cleanliness}/>
           <Rating name={{name: "Accuracy"}}score={this.state.cleanliness}/>
           <Rating name={{name: "Check-in"}}score={this.state.cleanliness}/>
-          <Rating name={{name: "Location"}}score={this.state.cleanliness}/> */}
+          <Rating name={{name: "Location"}}score={this.state.cleanliness}/>
         </div>
         {/* <ReviewsList />
         <ReviewsNav /> */}
