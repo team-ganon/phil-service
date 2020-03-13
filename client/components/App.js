@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReviewsNav from './ReviewsNav';
 import ReviewsHeader from './ReviewsHeader';
 import ReviewsList from './ReviewsList';
+import Rating from './Rating';
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class App extends Component {
     this.state = {
       reviews: [],
       currentReviews: [],
+      total: 0,
+      average: 0,
       error: false,
       cleanliness: 0,
       communication: 0,
@@ -39,15 +42,18 @@ class App extends Component {
           checkIn += reviews[i].checkIn;
           location += reviews[i].location;
         }
-        cleanliness = Math.floor(cleanliness / length);
-        communication = Math.floor(communication / length);
-        value = Math.floor(value / length);
-        accuracy = Math.floor(accuracy / length);
-        checkIn = Math.floor(checkIn / length);
-        location = Math.floor(location / length);
+        cleanliness = Math.ceil(cleanliness / length);
+        communication = Math.ceil(communication / length);
+        value = Math.ceil(value / length);
+        accuracy = Math.ceil(accuracy / length);
+        checkIn = Math.ceil(checkIn / length);
+        location = Math.ceil(location / length);
+        let average = Math.ceil(((cleanliness + communication + value + accuracy + checkIn + location) / 6));
         this.setState({
           reviews: reviews,
           currentReviews: reviews.slice(0, 8),
+          average: average,
+          total: length,
           cleanliness: cleanliness,
           communication: communication,
           value: value,
@@ -64,9 +70,20 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <ReviewsHeader reviews/>
-        <ReviewsList />
-        <ReviewsNav />
+        <ReviewsHeader 
+        average={this.state.average}
+        total={this.state.total}
+        />
+        <div>
+          <Rating name={{name: "Cleanliness"}}score={this.state.cleanliness}/>
+          {/* <Rating name={{name: "Communication"}}score={this.state.cleanliness}/>
+          <Rating name={{name: "Value"}}score={this.state.cleanliness}/>
+          <Rating name={{name: "Accuracy"}}score={this.state.cleanliness}/>
+          <Rating name={{name: "Check-in"}}score={this.state.cleanliness}/>
+          <Rating name={{name: "Location"}}score={this.state.cleanliness}/> */}
+        </div>
+        {/* <ReviewsList />
+        <ReviewsNav /> */}
       </div>
     )
   }
