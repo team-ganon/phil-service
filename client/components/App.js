@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import ReviewsNav from './ReviewsNav';
+import ReviewsHeader from './ReviewsHeader';
+import ReviewsList from './ReviewsList';
 
 class App extends Component {
   constructor(props) {
@@ -61,7 +64,9 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-    dsfbvdfsbvsdfbdfsb
+        <ReviewsHeader reviews/>
+        <ReviewsList />
+        <ReviewsNav />
       </div>
     )
   }
