@@ -8,15 +8,24 @@ span {
 }
 
 .app {
-  width: 35vw;
+  width: 40vw;
   margin-left: 20vw;
 }
+
+.reviewHeaderDiv {
+  
+  margin-bottom: 20px;
+}
+
+
 
 .reviewsHeaderH2 {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.25em;
   color: rgb(72, 72, 72);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 input {
@@ -41,6 +50,9 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  
+ 
 }
 
 .containerForStarReviews {
@@ -71,10 +83,46 @@ ion-icon {
 
 .average {
   margin: 0px;
-  padding-left: 10px;;
+  padding-left: 7px;;
 }
 
 .search {
-  display: flex;;
+  display: flex;
+  align-items: center;
 }
 
+.title {
+  font-size: 16px;
+}
+
+.ratingHolderDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border-top: 2px solid rgb(235, 235, 235);
+  padding-top: 10px;
+}
+
+.ratingDiv {
+  display: flex;
+  /* border: 2px solid black; */
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+  
+}
+
+.outerLineDiv {
+  width: 30%;
+  background-color: #d9d9d9;
+  height: 5px;
+  align-self: center;
+  
+}
+
+.innerLineDiv {
+  background-color: #484848;
+  height: 5px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;;
+}
