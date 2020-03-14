@@ -21,31 +21,14 @@ const seedDb = function() {
             user: users[i]._id, 
             rental: j + 1,
             body: faker.fake('{{lorem.paragraph}}'),
-            cleanliness: Math.floor(Math.random() * 5),
-            communication: Math.floor(Math.random() * 5),
-            value: Math.floor(Math.random() * 5),
-            accuracy: Math.floor(Math.random() * 5),
-            checkIn: Math.floor(Math.random() * 5),
-            location: Math.floor(Math.random() * 5)
+            cleanliness: Math.ceil(Math.random() * 5),
+            communication: Math.ceil(Math.random() * 5),
+            value: Math.ceil(Math.random() * 5),
+            accuracy: Math.ceil(Math.random() * 5),
+            checkIn: Math.ceil(Math.random() * 5),
+            location: Math.ceil(Math.random() * 5)
           })
-
         }
-        
-        // let random = Math.floor(Math.random() * 100);
-        // for (let j = 0; j < random; j++) {
-        //   reviews.push({
-        //       user: users[i]._id, 
-        //       rental: Math.floor(Math.random() * 100),
-        //       body: faker.fake('{{lorem.paragraph}}'),
-        //       cleanliness: Math.floor(Math.random() * 5),
-        //       communication: Math.floor(Math.random() * 5),
-        //       value: Math.floor(Math.random() * 5),
-        //       accuracy: Math.floor(Math.random() * 5),
-        //       checkIn: Math.floor(Math.random() * 5),
-        //       location: Math.floor(Math.random() * 5)
-        //     }
-        //   )
-        // }
       }
       return Review.insertMany(reviews)
     })
