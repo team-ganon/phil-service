@@ -8,10 +8,13 @@ const Rating = ({name, score}) => {
   return (
     <div className="ratingDiv">
       <p className='title'>{title}</p>
-      <div className='outerLineDiv'>
-        <div className="innerLineDiv" style={style}></div>
+      <div className='ratingBarAndScore'>
+        <div className='outerLineDiv'>
+          <div className="innerLineDiv" style={style}></div>
+        </div>
+        <p className='score'>{score}</p>
       </div>
-      <p className='score'>{score}</p>
+      
     </div>
   )
 };
