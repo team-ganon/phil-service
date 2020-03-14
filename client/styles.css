@@ -13,11 +13,8 @@ span {
 }
 
 .reviewHeaderDiv {
-  
   margin-bottom: 20px;
 }
-
-
 
 .reviewsHeaderH2 {
   font-size: 24px;
@@ -51,8 +48,6 @@ input {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  
- 
 }
 
 .containerForStarReviews {
@@ -61,7 +56,6 @@ input {
 
 .containerForStarReviews {
   display: flex;
-  
 }
 
 .star {
@@ -125,4 +119,8 @@ ion-icon {
   height: 5px;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;;
+}
+
+.image {
+  border-radius: 50%;
 }
