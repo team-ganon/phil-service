@@ -23,7 +23,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3001/api/rentals/4`)
+    let endPoint = window.location.href.split('=');
+    console.log(endPoint)
+    fetch(`http://localhost:3001/api/rentals/${endPoint[1]}`)
       .then(response => response.json())
       .then(reviews => {
         console.log(reviews)
