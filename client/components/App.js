@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReviewsNav from './ReviewsNav';
 import ReviewsHeader from './ReviewsHeader';
-import ReviewsList from './ReviewsList';
+import Review from './Review';
 import Rating from './Rating';
 
 class App extends Component {
@@ -71,8 +71,8 @@ class App extends Component {
     return (
       <div className="app">
         <ReviewsHeader 
-        average={this.state.average}
-        total={this.state.total}
+          average={this.state.average}
+          total={this.state.total}
         />
         <div className='ratingHolderDiv'>
           <Rating name={{name: "Cleanliness"}}score={this.state.cleanliness}/>
@@ -82,8 +82,7 @@ class App extends Component {
           <Rating name={{name: "Check-in"}}score={this.state.cleanliness}/>
           <Rating name={{name: "Location"}}score={this.state.cleanliness}/>
         </div>
-        {/* <ReviewsList />
-        <ReviewsNav /> */}
+        {this.state.currentReviews.map((review, i) => <Review review={review} key={i} />)}
       </div>
     )
   }
