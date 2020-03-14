@@ -10,9 +10,9 @@ const ReviewsHeader = ({average, total}) => {
         <div className="containerForStarReviews">
             <div className='star'>
               <ion-icon name="star"></ion-icon>
-              <p className='average'>{average}</p>
+              <p className='averageTotal'>{average}</p>
             </div>
-            <p className="total average">{total} reviews</p>
+            <p className="total average"><span className='reviewCount'>{total}</span> reviews</p>
         </div>
           
         <div className='search'>
