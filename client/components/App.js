@@ -9,6 +9,7 @@ class App extends Component {
     super(props)
     this.state = {
       reviews: [],
+      currentPlace: 0,
       currentReviews: [],
       total: 0,
       average: 0,
@@ -24,11 +25,10 @@ class App extends Component {
 
   componentDidMount() {
     let endPoint = window.location.href.split('=');
-    console.log(endPoint)
     fetch(`http://localhost:3001/api/rentals/${endPoint[1]}`)
       .then(response => response.json())
       .then(reviews => {
-        console.log(reviews)
+        //console.log(reviews)
         let length = reviews.length;
         let cleanliness = 0; 
         let communication = 0; 
@@ -69,6 +69,29 @@ class App extends Component {
       }))
   }
 
+  currentForward() {
+    let current = this.state.reviews.slice(this.state.currentPlace, this.state.currentPlace + 8)
+    this.setState({
+      currentPlace: this.state.currentPlace + 8
+    });
+    this.displayed();
+  }
+
+  displayed() {
+    let current = this.state.reviews.slice(this.state.currentPlace, this.state.currentPlace + 8)
+    console.log('ran')
+    this.setState({
+      currentReviews: current
+    })
+  }
+
+  // currentBackward() {
+
+  // }
+
+
+
+
   render() {
     return (
       <div className="app">
@@ -85,6 +108,15 @@ class App extends Component {
           <Rating name={{name: "Location"}}score={this.state.cleanliness}/>
         </div>
         {this.state.currentReviews.map((review, i) => <Review review={review} key={i} />)}
+        {this.state.reviews.length > 0 && 
+          <ReviewsNav 
+            currentReviews={this.state.currentReviews}
+            currentPlace={this.state.currentPlace}
+            currentForward={this.currentForward.bind(this)}
+            reviews={this.state.reviews}
+          />
+        }
+        
       </div>
     )
   }
