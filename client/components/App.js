@@ -70,24 +70,16 @@ class App extends Component {
   }
 
   currentForward() {
-    let current = this.state.reviews.slice(this.state.currentPlace, this.state.currentPlace + 8)
+    let current = this.state.reviews.slice(this.state.currentPlace + 8, this.state.currentPlace + 16)
     this.setState({
-      currentPlace: this.state.currentPlace + 8
-    });
-    this.displayed();
-  }
-
-  displayed() {
-    let current = this.state.reviews.slice(this.state.currentPlace, this.state.currentPlace + 8)
-    console.log('ran')
-    this.setState({
+      currentPlace: this.state.currentPlace + 8,
       currentReviews: current
-    })
+    });
   }
 
-  // currentBackward() {
 
-  // }
+
+  
 
 
 
@@ -110,7 +102,6 @@ class App extends Component {
         {this.state.currentReviews.map((review, i) => <Review review={review} key={i} />)}
         {this.state.reviews.length > 0 && 
           <ReviewsNav 
-            currentReviews={this.state.currentReviews}
             currentPlace={this.state.currentPlace}
             currentForward={this.currentForward.bind(this)}
             reviews={this.state.reviews}
