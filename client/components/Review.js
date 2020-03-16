@@ -4,7 +4,6 @@ import {format, parseISO} from 'date-fns';
 
 
 const Review = ({review}) => {
-  console.log(review)
   var result = format(
     parseISO(review.date),
     'MMMM yyyy'
