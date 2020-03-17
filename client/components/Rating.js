@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../CSS/rating.css';
 
 const Rating = ({name, score}) => {
   let title = name.name;
@@ -6,15 +7,14 @@ const Rating = ({name, score}) => {
     width: `${score * 2}0%`
   };
   return (
-    <div className="ratingDiv">
-      <p className='title'>{title}</p>
-      <div className='ratingBarAndScore'>
-        <div className='outerLineDiv'>
-          <div className="innerLineDiv" style={style}></div>
+    <div className={styles.ratingDiv}>
+      <p className={styles.title}>{title}</p>
+      <div className={styles.ratingBarAndScore}>
+        <div className={styles.outerLineDiv}>
+          <div className={styles.innerLineDiv} style={style}></div>
         </div>
-        <p className='score'>{score}</p>
+        <p className={styles.score}>{score}</p>
       </div>
-      
     </div>
   );
 };

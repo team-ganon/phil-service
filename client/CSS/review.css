@@ -1,0 +1,36 @@
+.reviewOuterDiv {
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 15px;
+  border-bottom: 1px solid rgb(235, 235, 235)
+}
+
+.topOfReview {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+.nameDate {
+  align-self: flex-start;
+  margin-left: 20px;
+  height: 100%;
+}
+
+.date {
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+.reviewParagraph {
+  padding-top: 17px;
+  padding-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: 0.75px;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import style from '../CSS/reviewnav.css';
 
 class ReviewsNav extends Component {
   constructor(props) {
@@ -92,28 +93,27 @@ class ReviewsNav extends Component {
 
   render() {
     return (
-      <div className='reviewsComponent'>
+      <div className={style.reviewsComponent}>
         {!(this.state.currentButtons[this.state.currentButton - 1] === 1) && 
         <button 
-          className='backward'
+          className={style.backward}
           onClick={() => { this.changeBackword(); this.props.currentBackword(); }}>
           <ion-icon name="chevron-back-outline"></ion-icon>
         </button>}
-        <div className="reviewNavDiv">
+        <div className={style.reviewNavDiv}>
           {this.state.currentButtons.map((num, i) => {
             if (this.state.currentButton === (i + 1)) {
-              return <div key={i} className='currentButton'>{num}</div>;
+              return <div key={i} className={style.currentButton}>{num}</div>;
             }
             return (
-              <div key={i} className='reviewsButtons'>{num}</div>
+              <div key={i} className={style.reviewsButtons}>{num}</div>
             );
           })}
         </div>
         {!((this.props.reviews.length - this.props.currentPlace) <= 7) && <button 
-          className='forward' 
+          className={style.forward}
           onClick={() => { this.howManyLeft(); this.changeForward(); this.props.currentForward(); }}><ion-icon name="chevron-forward-outline"></ion-icon></button>}
       </div>
-      
     );
   }
 }

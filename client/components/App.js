@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import style from '../CSS/app.css';
 import ReviewsNav from './ReviewsNav';
 import ReviewsHeader from './ReviewsHeader';
 import Review from './Review';
@@ -87,12 +88,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className={style.app}>
         <ReviewsHeader 
           average={this.state.average}
           total={this.state.total}
         />
-        <div className='ratingHolderDiv'>
+        <div className={style.ratingHolderDiv}>
           <Rating name={{name: 'Cleanliness'}}score={this.state.cleanliness}/>
           <Rating name={{name: 'Communication'}}score={this.state.communication}/>
           <Rating name={{name: 'Value'}}score={this.state.value}/>

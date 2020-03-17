@@ -1,7 +1,6 @@
 import React from 'react';
 import {format, parseISO} from 'date-fns';
-
-
+import style from '../CSS/review.css';
 
 const Review = ({review}) => {
   var result = format(
@@ -9,15 +8,15 @@ const Review = ({review}) => {
     'MMMM yyyy'
   );
   return (
-    <div className="reviewOuterDiv">
-      <div className='topOfReview'>
-        <img className='image' height="48" width="48" src={review.userProfile.imageUrl} />
-        <div className='nameDate'>
+    <div className={style.reviewOuterDiv}>
+      <div className={style.topOfReview}>
+        <img className={style.image} height="48" width="48" src={review.userProfile.imageUrl} />
+        <div className={style.nameDate}>
           <p>{review.userProfile.name}</p>
-          <p className='date'>{result}</p>
+          <p className={style.date}>{result}</p>
         </div>
       </div>
-      <p className='reviewParagraph'>{review.body}</p>
+      <p className={style.reviewParagraph}>{review.body}</p>
     </div>
   );
 };
