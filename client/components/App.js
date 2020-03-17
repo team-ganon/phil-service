@@ -53,7 +53,7 @@ class App extends Component {
         let average = Math.ceil(((cleanliness + communication + value + accuracy + checkIn + location) / 6));
         this.setState({
           reviews: reviews,
-          currentReviews: reviews.slice(0, 8),
+          currentReviews: reviews.slice(0, 7),
           average: average,
           total: length,
           cleanliness: cleanliness,
@@ -70,20 +70,19 @@ class App extends Component {
   }
 
   currentForward() {
-    let current = this.state.reviews.slice(this.state.currentPlace + 8, this.state.currentPlace + 16);
+    let current = this.state.reviews.slice(this.state.currentPlace + 7, this.state.currentPlace + 14);
     this.setState({
-      currentPlace: this.state.currentPlace + 8,
+      currentPlace: this.state.currentPlace + 7,
       currentReviews: current
     });
   }
 
   currentBackword() {
-    let current = this.state.reviews.slice(this.state.currentPlace - 8, this.state.currentPlace);
+    let current = this.state.reviews.slice(this.state.currentPlace - 7, this.state.currentPlace);
     this.setState({
-      currentPlace: this.state.currentPlace - 8,
+      currentPlace: this.state.currentPlace - 7,
       currentReviews: current
     });
-
   }
 
   render() {
@@ -110,7 +109,6 @@ class App extends Component {
             reviews={this.state.reviews}
           />
         }
-        
       </div>
     );
   }
