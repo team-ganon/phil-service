@@ -7,7 +7,7 @@ const Review = ({review}) => {
   var result = format(
     parseISO(review.date),
     'MMMM yyyy'
-  )
+  );
   return (
     <div className="reviewOuterDiv">
       <div className='topOfReview'>
@@ -19,7 +19,7 @@ const Review = ({review}) => {
       </div>
       <p className='reviewParagraph'>{review.body}</p>
     </div>
-  ) 
+  );
 };
 
 export default Review;
