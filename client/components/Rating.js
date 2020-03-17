@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Rating = ({name, score}) => {
-  let title = name.name
+  let title = name.name;
   let style = {
     width: `${score * 2}0%`
-  }
+  };
   return (
     <div className="ratingDiv">
       <p className='title'>{title}</p>
@@ -16,7 +16,7 @@ const Rating = ({name, score}) => {
       </div>
       
     </div>
-  )
+  );
 };
 
 export default Rating;
