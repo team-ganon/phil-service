@@ -6,7 +6,7 @@ import Rating from './Rating';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       reviews: [],
       currentPlace: 0,
@@ -20,7 +20,7 @@ class App extends Component {
       accuracy: 0,
       checkIn: 0,
       location: 0
-    }
+    };
   }
 
   componentDidMount() {
@@ -62,27 +62,29 @@ class App extends Component {
           accuracy: accuracy,
           checkIn: checkIn,
           location: location
-        })
+        });
       })
       .catch(e => this.setState({
         error: true
-      }))
+      }));
   }
 
   currentForward() {
-    let current = this.state.reviews.slice(this.state.currentPlace + 8, this.state.currentPlace + 16)
+    let current = this.state.reviews.slice(this.state.currentPlace + 8, this.state.currentPlace + 16);
     this.setState({
       currentPlace: this.state.currentPlace + 8,
       currentReviews: current
     });
   }
 
+  currentBackword() {
+    let current = this.state.reviews.slice(this.state.currentPlace - 8, this.state.currentPlace);
+    this.setState({
+      currentPlace: this.state.currentPlace - 8,
+      currentReviews: current
+    });
 
-
-  
-
-
-
+  }
 
   render() {
     return (
@@ -92,24 +94,25 @@ class App extends Component {
           total={this.state.total}
         />
         <div className='ratingHolderDiv'>
-          <Rating name={{name: "Cleanliness"}}score={this.state.cleanliness}/>
-          <Rating name={{name: "Communication"}}score={this.state.cleanliness}/>
-          <Rating name={{name: "Value"}}score={this.state.cleanliness}/>
-          <Rating name={{name: "Accuracy"}}score={this.state.cleanliness}/>
-          <Rating name={{name: "Check-in"}}score={this.state.cleanliness}/>
-          <Rating name={{name: "Location"}}score={this.state.cleanliness}/>
+          <Rating name={{name: 'Cleanliness'}}score={this.state.cleanliness}/>
+          <Rating name={{name: 'Communication'}}score={this.state.cleanliness}/>
+          <Rating name={{name: 'Value'}}score={this.state.cleanliness}/>
+          <Rating name={{name: 'Accuracy'}}score={this.state.cleanliness}/>
+          <Rating name={{name: 'Check-in'}}score={this.state.cleanliness}/>
+          <Rating name={{name: 'Location'}}score={this.state.cleanliness}/>
         </div>
         {this.state.currentReviews.map((review, i) => <Review review={review} key={i} />)}
         {this.state.reviews.length > 0 && 
           <ReviewsNav 
             currentPlace={this.state.currentPlace}
             currentForward={this.currentForward.bind(this)}
+            currentBackword={this.currentBackword.bind(this)}
             reviews={this.state.reviews}
           />
         }
         
       </div>
-    )
+    );
   }
 }
 
