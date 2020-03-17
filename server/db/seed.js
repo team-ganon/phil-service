@@ -6,7 +6,7 @@ for (let i = 1; i <= 100; i++) {
   users.push({
     name: faker.name.findName(),
     imageUrl: `https://hackreactoramazonfrontendcapstone.s3-us-west-2.amazonaws.com/${i}.jpeg`
-  })
+  });
 }
 
 const reviews = [];
@@ -27,13 +27,13 @@ const seedDb = function() {
             accuracy: Math.ceil(Math.random() * 5),
             checkIn: Math.ceil(Math.random() * 5),
             location: Math.ceil(Math.random() * 5)
-          })
+          });
         }
       }
-      return Review.insertMany(reviews)
+      return Review.insertMany(reviews);
     })
     .then(() => {})
-    .catch((e) => console.log(e))
+    .catch((e) => console.log(e));
 };
 
 seedDb();
