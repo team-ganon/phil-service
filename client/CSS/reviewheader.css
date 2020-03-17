@@ -1,0 +1,68 @@
+.reviewHeaderDiv {
+  margin-bottom: 20px;
+}
+
+.reviewsHeaderH2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25em;
+  color: rgb(72, 72, 72);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.bottomDivOfHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerForStarReviews {
+  display: flex;
+}
+
+.star {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  padding-right: 10px;
+  border-right: 1px solid rgb(235, 235, 235)
+}
+
+.averageTotal {
+  font-weight: 500;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.average {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0px;
+  padding-left: 7px;
+}
+
+.reviewCount {
+  font-weight: 500 !important;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  font-size: 14px;
+  color:  #484848;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-weight: 600;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 2px;
+  border-width: 1px;
+  margin-right: 5px;
+  border-right: 0px;
+}
