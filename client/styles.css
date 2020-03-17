@@ -228,11 +228,22 @@ ion-icon {
   letter-spacing: 0.75px;
 }
 
-.reviewNavDiv {
-  display: flex;
+.reviewsComponent {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 100%;
 }
+
+.reviewNavDiv {
+  display: flex;
+  grid-column: 2/3;
+
+  justify-content: space-around;
+}
+
+
 
 .reviewsButtons {
   width: 32px;
@@ -242,7 +253,7 @@ ion-icon {
   border-radius: 16px;
   color: rgb(0, 132, 137);
   font-size: 14px;
-  margin-right: 30px;
+ 
 }
 
 .currentButton {
@@ -254,10 +265,11 @@ ion-icon {
   text-align: center;
   border-radius: 16px;
   font-size: 14px;
-  margin-right: 30px;
+  
 }
 
 .forward {
+  grid-column: 3/4;
   align-items: center;
   background-color: transparent;
   box-shadow: rgb(0, 132, 137) 0px 0px 0px 1px inset;
@@ -267,8 +279,19 @@ ion-icon {
   justify-content: center;
   width: 32px;
   border-radius: 50%;
+  justify-self: center;
 }
 
 .backward {
-  margin-right: 30px;
+  grid-column: 1/2;
+  align-items: center;
+  background-color: transparent;
+  box-shadow: rgb(0, 132, 137) 0px 0px 0px 1px inset;
+  color: rgb(0, 132, 137);
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+  border-radius: 50%;
+  justify-self: center;
 }
