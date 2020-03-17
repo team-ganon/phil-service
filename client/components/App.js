@@ -94,11 +94,11 @@ class App extends Component {
         />
         <div className='ratingHolderDiv'>
           <Rating name={{name: 'Cleanliness'}}score={this.state.cleanliness}/>
-          <Rating name={{name: 'Communication'}}score={this.state.cleanliness}/>
-          <Rating name={{name: 'Value'}}score={this.state.cleanliness}/>
-          <Rating name={{name: 'Accuracy'}}score={this.state.cleanliness}/>
-          <Rating name={{name: 'Check-in'}}score={this.state.cleanliness}/>
-          <Rating name={{name: 'Location'}}score={this.state.cleanliness}/>
+          <Rating name={{name: 'Communication'}}score={this.state.communication}/>
+          <Rating name={{name: 'Value'}}score={this.state.value}/>
+          <Rating name={{name: 'Accuracy'}}score={this.state.accuracy}/>
+          <Rating name={{name: 'Check-in'}}score={this.state.checkIn}/>
+          <Rating name={{name: 'Location'}}score={this.state.location}/>
         </div>
         {this.state.currentReviews.map((review, i) => <Review review={review} key={i} />)}
         {this.state.reviews.length > 0 && 
