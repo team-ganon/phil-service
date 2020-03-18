@@ -25,7 +25,7 @@ let reviewSample = {
 
 describe('Rating Component', () => {
 
-  it('Review Component', () => {
+  it('Review SnapShot Test', () => {
     const ReviewJson = renderer.create(<Review review={reviewSample} />).toJSON();
     expect(ReviewJson).toMatchSnapshot();
   });

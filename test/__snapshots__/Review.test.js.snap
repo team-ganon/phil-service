@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Rating Component Review Component 1`] = `
+exports[`Rating Component Review SnapShot Test 1`] = `
 <div
   className="reviewOuterDiv"
 >
