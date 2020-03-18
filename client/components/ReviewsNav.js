@@ -119,5 +119,3 @@ class ReviewsNav extends Component {
 }
 
 export default ReviewsNav;
-
-
