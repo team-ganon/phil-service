@@ -1,2 +1,3 @@
 node_modules
-public
+public/dist/index.html
+public/dist/bundle.js
