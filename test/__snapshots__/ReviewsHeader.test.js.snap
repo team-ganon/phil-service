@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewsHeader Component ReviewsHeader SnapShot Test 1`] = `
+<div
+  className="reviewHeaderDiv"
+>
+  <h2
+    className="reviewsHeaderH2"
+  >
+    Reviews
+  </h2>
+  <div
+    className="bottomDivOfHeader"
+  >
+    <div
+      className="containerForStarReviews"
+    >
+      <div
+        className="star"
+      >
+        <ion-icon
+          name="star"
+        />
+        <p
+          className="averageTotal"
+        >
+          4
+        </p>
+      </div>
+      <p
+        className="average"
+      >
+        <span
+          className="reviewCount"
+        >
+          100
+        </span>
+         reviews
+      </p>
+    </div>
+    <div
+      className="search"
+    >
+      <input
+        placeholder="Search Reviews"
+        type="text"
+      />
+      <ion-icon
+        name="search-outline"
+      />
+    </div>
+  </div>
+</div>
+`;
