@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Rating Component 1`] = `
+<div
+  className="ratingDiv"
+>
+  <p
+    className="title"
+  >
+    Cleanliness
+  </p>
+  <div
+    className="ratingBarAndScore"
+  >
+    <div
+      className="outerLineDiv"
+    >
+      <div
+        className="innerLineDiv"
+        style={
+          Object {
+            "width": "60%",
+          }
+        }
+      />
+    </div>
+    <p
+      className="score"
+    >
+      3
+    </p>
+  </div>
+</div>
+`;
+
+exports[`App Review Component 1`] = `
+<div
+  className="reviewOuterDiv"
+>
+  <div
+    className="topOfReview"
+  >
+    <img
+      className="image"
+      height="48"
+      src="https://hackreactoramazonfrontendcapstone.s3-us-west-2.amazonaws.com/1.jpeg"
+      width="48"
+    />
+    <div
+      className="nameDate"
+    >
+      <p>
+        David Purdy
+      </p>
+      <p
+        className="date"
+      >
+        March 2020
+      </p>
+    </div>
+  </div>
+  <p
+    className="reviewParagraph"
+  >
+    Cumque pariatur quisquam quibusdam non qui qui ratione. Autem ratione rerum ut id rerum voluptatem adipisci iure accusantium. Ipsum voluptas maiores occaecati quaerat est corporis omnis perspiciatis.
+  </p>
+</div>
+`;
+
+exports[`App ReviewHeader Component 1`] = `
+<div
+  className="reviewHeaderDiv"
+>
+  <h2
+    className="reviewsHeaderH2"
+  >
+    Reviews
+  </h2>
+  <div
+    className="bottomDivOfHeader"
+  >
+    <div
+      className="containerForStarReviews"
+    >
+      <div
+        className="star"
+      >
+        <ion-icon
+          name="star"
+        />
+        <p
+          className="averageTotal"
+        >
+          4
+        </p>
+      </div>
+      <p
+        className="average"
+      >
+        <span
+          className="reviewCount"
+        >
+          100
+        </span>
+         reviews
+      </p>
+    </div>
+    <div
+      className="search"
+    >
+      <input
+        placeholder="Search Reviews"
+        type="text"
+      />
+      <ion-icon
+        name="search-outline"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App ReviewsNav Component 1`] = `
+<div
+  className="reviewsComponent"
+>
+  <button
+    className="backward"
+    onClick={[Function]}
+  >
+    <ion-icon
+      name="chevron-back-outline"
+    />
+  </button>
+  <div
+    className="reviewNavDiv"
+  />
+  <button
+    className="forward"
+    onClick={[Function]}
+  >
+    <ion-icon
+      name="chevron-forward-outline"
+    />
+  </button>
+</div>
+`;

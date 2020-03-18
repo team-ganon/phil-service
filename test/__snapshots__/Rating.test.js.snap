@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating Component Rating SnapShot Test 1`] = `
+<div
+  className="ratingDiv"
+>
+  <p
+    className="title"
+  >
+    Cleanliness
+  </p>
+  <div
+    className="ratingBarAndScore"
+  >
+    <div
+      className="outerLineDiv"
+    >
+      <div
+        className="innerLineDiv"
+        style={
+          Object {
+            "width": "60%",
+          }
+        }
+      />
+    </div>
+    <p
+      className="score"
+    >
+      3
+    </p>
+  </div>
+</div>
+`;

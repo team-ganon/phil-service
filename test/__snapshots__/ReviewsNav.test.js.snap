@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewsNav Component ReviewsNav SnapShot Test 1`] = `
+<div
+  className="reviewsComponent"
+>
+  <button
+    className="backward"
+    onClick={[Function]}
+  >
+    <ion-icon
+      name="chevron-back-outline"
+    />
+  </button>
+  <div
+    className="reviewNavDiv"
+  />
+  <button
+    className="forward"
+    onClick={[Function]}
+  >
+    <ion-icon
+      name="chevron-forward-outline"
+    />
+  </button>
+</div>
+`;

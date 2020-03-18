@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating Component Review Component 1`] = `
+<div
+  className="reviewOuterDiv"
+>
+  <div
+    className="topOfReview"
+  >
+    <img
+      className="image"
+      height="48"
+      src="https://hackreactoramazonfrontendcapstone.s3-us-west-2.amazonaws.com/1.jpeg"
+      width="48"
+    />
+    <div
+      className="nameDate"
+    >
+      <p>
+        David Purdy
+      </p>
+      <p
+        className="date"
+      >
+        March 2020
+      </p>
+    </div>
+  </div>
+  <p
+    className="reviewParagraph"
+  >
+    Cumque pariatur quisquam quibusdam non qui qui ratione. Autem ratione rerum ut id rerum voluptatem adipisci iure accusantium. Ipsum voluptas maiores occaecati quaerat est corporis omnis perspiciatis.
+  </p>
+</div>
+`;
