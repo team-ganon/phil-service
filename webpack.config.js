@@ -1,11 +1,11 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, 'client/components/index.js'),
-  output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, 'public/dist'),
-  },
+  plugins: [new HtmlWebpackPlugin({
+    template: './client/template.html'
+  })],
   module: {
     rules: [{
       test: /\.jsx?$/,
@@ -24,7 +24,7 @@ module.exports = {
             importLoaders: 1
           },
         },
-      ],
+      ]
     }
     ]
   }
