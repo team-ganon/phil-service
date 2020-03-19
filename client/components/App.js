@@ -44,7 +44,7 @@ class App extends Component {
   componentDidMount() {
     let endPoint = window.location.href.split('=');
     reviewApiCall(endPoint[1])
-      .then(result => console.log(result))
+      .then(result => this.setState(result))
       .catch(e => this.setState(e));
   }
 
