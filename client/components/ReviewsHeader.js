@@ -1,12 +1,11 @@
 import React from 'react';
-import style from '../CSS/reviewheader.css'
+import style from '../CSS/reviewheader.css';
 
 const ReviewsHeader = ({average, total}) => {
   return (
     <div className={style.reviewHeaderDiv}>
       <h2 className={style.reviewsHeaderH2}>Reviews</h2>
       <div className={style.bottomDivOfHeader}>
-
         <div className={style.containerForStarReviews}>
           <div className={style.star}>
             <ion-icon name="star"></ion-icon>
