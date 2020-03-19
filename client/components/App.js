@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import reviewApiCall from './api';
 import style from '../CSS/app.css';
 import ReviewsNav from './ReviewsNav';
 import ReviewsHeader from './ReviewsHeader';
@@ -22,68 +23,29 @@ class App extends Component {
       checkIn: 0,
       location: 0
     };
+
+    this.currentForward = () => {
+      let current = this.state.reviews.slice(this.state.currentPlace + 7, this.state.currentPlace + 14);
+      this.setState({
+        currentPlace: this.state.currentPlace + 7,
+        currentReviews: current
+      });
+    };
+
+    this.currentBackword = () => {
+      let current = this.state.reviews.slice(this.state.currentPlace - 7, this.state.currentPlace);
+      this.setState({
+        currentPlace: this.state.currentPlace - 7,
+        currentReviews: current
+      });
+    };
   }
 
   componentDidMount() {
     let endPoint = window.location.href.split('=');
-    fetch(`http://localhost:3001/api/rentals/${endPoint[1]}`)
-      .then(response => response.json())
-      .then(reviews => {
-        //console.log(reviews)
-        let length = reviews.length;
-        let cleanliness = 0; 
-        let communication = 0; 
-        let value = 0; 
-        let accuracy = 0;
-        let checkIn = 0;
-        let location = 0;
-        for (let i = 0; i < reviews.length; i++) {
-          cleanliness += reviews[i].cleanliness;
-          communication += reviews[i].communication;
-          value += reviews[i].value;
-          accuracy += reviews[i].accuracy;
-          checkIn += reviews[i].checkIn;
-          location += reviews[i].location;
-        }
-        cleanliness = Math.ceil(cleanliness / length);
-        communication = Math.ceil(communication / length);
-        value = Math.ceil(value / length);
-        accuracy = Math.ceil(accuracy / length);
-        checkIn = Math.ceil(checkIn / length);
-        location = Math.ceil(location / length);
-        let average = Math.ceil(((cleanliness + communication + value + accuracy + checkIn + location) / 6));
-        this.setState({
-          reviews: reviews,
-          currentReviews: reviews.slice(0, 7),
-          average: average,
-          total: length,
-          cleanliness: cleanliness,
-          communication: communication,
-          value: value,
-          accuracy: accuracy,
-          checkIn: checkIn,
-          location: location
-        });
-      })
-      .catch(e => this.setState({
-        error: true
-      }));
-  }
-
-  currentForward() {
-    let current = this.state.reviews.slice(this.state.currentPlace + 7, this.state.currentPlace + 14);
-    this.setState({
-      currentPlace: this.state.currentPlace + 7,
-      currentReviews: current
-    });
-  }
-
-  currentBackword() {
-    let current = this.state.reviews.slice(this.state.currentPlace - 7, this.state.currentPlace);
-    this.setState({
-      currentPlace: this.state.currentPlace - 7,
-      currentReviews: current
-    });
+    reviewApiCall(endPoint[1])
+      .then(result => console.log(result))
+      .catch(e => this.setState(e));
   }
 
   render() {
@@ -105,8 +67,8 @@ class App extends Component {
         {this.state.reviews.length > 0 && 
           <ReviewsNav 
             currentPlace={this.state.currentPlace}
-            currentForward={this.currentForward.bind(this)}
-            currentBackword={this.currentBackword.bind(this)}
+            currentForward={this.currentForward}
+            currentBackword={this.currentBackword}
             reviews={this.state.reviews}
           />
         }
