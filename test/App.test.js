@@ -15,7 +15,5 @@ describe('App Component', () => {
     const AppJson = renderer.create(<App />).toJSON();
     expect(AppJson).toMatchSnapshot();
   });
-
-
   
 });
