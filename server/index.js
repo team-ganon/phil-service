@@ -1,9 +1,9 @@
 const express = require('express');
-const { User, Review } = require('./db/index.js')
+const path = require('path');
+const { User, Review } = require('./db/index.js');
 const cors = require('cors');
 let app = express();
-app.use(express.json())
-//app.use(cors());
+app.use(express.json());
 app.use(express.static(__dirname + '/../public/dist'));
 
 app.get('/api/rentals/:id', cors(), async (req, res) => {
@@ -19,7 +19,11 @@ app.get('/api/rentals/:id', cors(), async (req, res) => {
   } catch (e) {
     res.sendStatus(500);
   }
-})
+});
+
+app.get('/app.js', cors(), async (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/dist/bundle.js'))
+});
 
 
 let port = process.env.PORT;
