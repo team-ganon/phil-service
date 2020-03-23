@@ -2,3 +2,4 @@ node_modules
 public/dist/index.html
 public/dist/bundle.js
 public
+package-lock.json
