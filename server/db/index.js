@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/airbnb';
+const mongoUri = 'mongodb://52.53.233.207/airbnb';
 const db = mongoose.connect(mongoUri);
 
 const userSchema = new mongoose.Schema({
