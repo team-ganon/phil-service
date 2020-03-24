@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const mongoUri = 'mongodb://52.53.233.207/airbnb';
-const db = mongoose.connect(mongoUri);
+const db = mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const userSchema = new mongoose.Schema({
   name: String,
